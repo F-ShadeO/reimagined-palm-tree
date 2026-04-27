@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: lightskyblue;
+    color: #e2e8f0;
+    min-height: 100vh; /* meaning and why vh is used. vh stands for viewport height. */
+    padding: 40px 20 px;
+    line-height: 1.5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto; /* 0 auto centres the container horizontally, 0 means no top or bottom margin. */
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #63b3ed;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: #718096;
+  margin-bottom: 32px;
+  font-size: 0.95rem;
+}
