@@ -1,0 +1,24 @@
+[
+    {
+        "hash": "f586d4293f7906ea99c39ed4a690afbb50af2432f29bfd8da3c89a7e48898511",
+        "attributes": {
+            "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+            "language": "en-US",
+            "platform": "Win32",
+            "screen_resolution": "1920x1080",
+            "color_depth": "32",
+            "timezone": "Europe/London",
+            "hardware_concurrency": "8",
+            "pixel_ratio": "1",
+            "touch_points": "0",
+            "canvas_hash": "e4dfb18788f8988784de7e90a58a7deb2ec8a0c29cbda5d9ddff9478f676e962"
+        },
+        "submitted_at": "2026-05-05T13:01:12.373389+00:00",
+        "uniqueness": {
+            "total_seen": 0,
+            "matching": 1,
+            "unique_hashes": 1,
+            "uniqueness_pct": 100.0
+        }
+    }
+]
