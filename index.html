@@ -21,8 +21,49 @@
             </p>
         </div>
 
+          <div class="card">
+    <button id="analyseBtn">Analyse My Browser</button>
+    <div id="statusMsg" class="status-msg"></div>
+    <div id="errorMsg"  class="error-msg"></div>
+  </div>
+<div id="results">
+    <div class="card">
+      <h2>Your fingerprint hash</h2>
+      <div class="hash-display" id="hashDisplay"></div>
+      <p class="caption">
+        SHA-256 hash of your combined browser attributes.
+        The same browser always produces the same hash.
+      </p>
     </div>
+    
+    <div class="card">
+      <h2>Uniqueness score</h2>
+      <div class="score-number" id="uniquenessScore"></div>
+      <div class="score-label"  id="uniquenessLabel"></div>
+      <div class="stat-grid">
+        <div class="stat-box">
+          <div class="stat-value" id="statTotal">—</div>
+          <div class="stat-label">Total Submissions</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="statUnique">—</div>
+          <div class="stat-label">Distinct Fingerprints</div>
+        </div>
+          
+      </div>
 
+        <div class="card">
+      <h2>Your browser attributes</h2>
+      <table class="attr-table" id="attrTable"></table>
+      <!--
+        Empty table — script.js populates this dynamically after the API responds.
+        All values are inserted with textContent (not innerHTML) to prevent XSS.
+      -->
+    </div>
+        
+    
+    </div>
+<script src="script.js"></script>
 
     </div>
 </body>
