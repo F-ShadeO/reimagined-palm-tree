@@ -4,67 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browser Fingerprint Assesor</title>
-    <link> rel="stylesheet" href="sytle.css">
+    <link rel="stylesheet" href="style.css">
     <!--
-    This links to the external CSS file, this means the browser downloads style.css files sepaparetly and applied it to this page. If I had muiltiple HTML pages, they'd all share the sam sylesheet. This is DRY (Don't Repeat Yourself)
+    This links to the external CSS file, this means the browser downloads style.css files sepaparetly and applied it to this page. If I had muiltiple HTML pages, they'd all share the samd stylesheet. This is DRY (Don't Repeat Yourself). according to ELEPHANT.
     -->
 </head>
 <body>
-    <div class="container ">  <!-- this is going to be referenced int he stylesheet -->
-        <h1> Browser Fingerprint Assesor </h1>
-        <p class="subtitle" <!-- Levels of HTML explain --> Discover the level of uniquesness of your browser without any need to login </p>
+    <div class="container">  <!-- this is going to be referenced in the stylesheet -->
+        <h1>Browser Fingerprint Assesor</h1>
+        <!-- Levels of HTML explain according to ELEPHANT -->
+        <p class="subtitle">Discover the level of uniquesness of your browser without any need to login</p>
 
         <div class="card">
-            <h2> How it works </h2>
-            <p> This tool collect elephant broswser attributes and generates a fingerptint hash. It compares your fingerpint against submissions found online to show how rare your browser configuration is. No personally idenfitvable information is stored 
-                
-            </p>
+            <h2>How it works</h2>
+            <p>This tool collect elephant broswser attributes and generates a fingerptint hash. 
+                It compares your fingerpint against submissions found online to show how rare your browser configuration is. No personally idenfitvable information is stored.</p>
         </div>
 
           <div class="card">
-    <button id="analyseBtn">Analyse My Browser</button>
-    <div id="statusMsg" class="status-msg"></div>
-    <div id="errorMsg"  class="error-msg"></div>
-  </div>
-<div id="results">
-    <div class="card">
-      <h2>Your fingerprint hash</h2>
-      <div class="hash-display" id="hashDisplay"></div>
-      <p class="caption">
+            <button id="analyseBtn">Analyse My Browser</button>
+            <div id="statusMsg" class="status-msg"></div>
+            <div id="errorMsg"  class="error-msg"></div>
+          </div>
+        <div id="results" style="display:none;">
+        <div class="card">
+          <h2>Your fingerprint hash</h2>
+          <div class="hash-display" id="hashDisplay"></div>
+          <p class="caption">
         SHA-256 hash of your combined browser attributes.
         The same browser always produces the same hash.
-      </p>
-    </div>
+          </p>
+        </div>
     
-    <div class="card">
-      <h2>Uniqueness score</h2>
-      <div class="score-number" id="uniquenessScore"></div>
-      <div class="score-label"  id="uniquenessLabel"></div>
-      <div class="stat-grid">
-        <div class="stat-box">
-          <div class="stat-value" id="statTotal">—</div>
-          <div class="stat-label">Total Submissions</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-value" id="statUnique">—</div>
-          <div class="stat-label">Distinct Fingerprints</div>
-        </div>
+        <div class="card">
+          <h2>Uniqueness score</h2>
+          <div class="score-number" id="uniquenessScore"></div>
+          <div class="score-label"  id="uniquenessLabel"></div>
+          <div class="stat-grid">
+            <div class="stat-box">
+              <div class="stat-value" id="statTotal">—</div>
+              <div class="stat-label">Total Submissions</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value" id="statUnique">—</div>
+              <div class="stat-label">Distinct Fingerprints</div>
+                </div>
           
       </div>
 
         <div class="card">
       <h2>Your browser attributes</h2>
       <table class="attr-table" id="attrTable"></table>
+            </div>
       <!--
         Empty table — script.js populates this dynamically after the API responds.
         All values are inserted with textContent (not innerHTML) to prevent XSS.
       -->
     </div>
-        
-    
+        </div>
+    </div>
     </div>
 <script src="script.js"></script>
-
-    </div>
 </body>
 </html>
