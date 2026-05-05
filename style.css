@@ -37,3 +37,159 @@ h2 {
   margin-bottom: 32px;
   font-size: 0.95rem;
 }
+
+p {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+ 
+.caption {
+  color: #718096;
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+.card {
+  background: #1a202c;
+  border: 1px solid #2d3748;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* This one card is used on every section. To change the card style, change it once here and all cards update.
+  This is a core benefit of external CSS over inline styles. */
+
+button {
+  background: #3182ce;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+/* cursor: pointer — shows hand cursor on hover (signals clickability) according to ELEPHANT.
+  transition: background 0.2s ease — smoothly animates colour change over
+              0.2 seconds when hovered. Improves perceived quality.according to ELEPHANT */
+
+button:hover {
+  background: #2b6cb0;
+}
+
+.status-msg {
+  display: none;
+  text-align: center;
+  color: #718096;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+ 
+.error-msg {
+  display: none;
+  text-align: center;
+  color: #fc8181;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+
+#results {
+  display: none;
+}
+
+.hash-display {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.78rem;
+  background: #0f1117;
+  border: 1px solid #2d3748;
+  border-radius: 6px;
+  padding: 12px;
+  word-break: break-all;
+  color: #68d391;
+  margin: 12px 0;
+}
+
+.score-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #63b3ed;
+  text-align: center;
+  margin: 12px 0 4px;
+}
+ 
+.score-label {
+  text-align: center;
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Flexbox According to ELEPHANT*/
+
+.stat-box {
+  background: #0f1117;
+  border: 1px solid #2d3748;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+}
+ 
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ed8936;
+}
+ 
+.stat-label {
+  font-size: 0.78rem;
+  color: #718096;
+  margin-top: 4px;
+}
+
+.attr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+/*
+  border-collapse: collapse — removes the gap between table cell borders.
+                   Without this, adjacent cells have a double border. according to ELEPHANT */
+
+.attr-table tr {
+  border-bottom: 1px solid #2d3748;
+}
+ 
+.attr-table tr:last-child {
+  border-bottom: none;
+}
+
+
+.attr-table td {
+  padding: 10px 8px;
+  vertical-align: top;
+}
+ 
+.attr-table td:first-child {
+  color: #a0aec0;
+  width: 45%;
+  font-weight: 500;
+}
+
+.attr-table td:last-child {
+  color: #e2e8f0;
+  word-break: break-all;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+}
