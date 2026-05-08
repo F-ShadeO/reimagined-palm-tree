@@ -17,7 +17,7 @@ FINGERPRINT_FILE = "fingerprints.json"
 def parse_fingerprint(data):
     """This defintion or def is used to define a function, in this case it's to parse(or analyse)
     It validates and sanitises incoming fingerprint payload.
-    It expects a dictionary, and will only return a sanitised dictionary wit
+    It expects a dictionary, and will only return a sanitised dictionary with
     the expected attribute keys. Raises TypeError if input is not a dict.
     """
     if not isinstance(data, dict):
@@ -45,6 +45,7 @@ def load_fingerprints(filepath):
     It returns an empty list if the file is missing or malformed,
     preventing a corrupted file from crashing the application.
     """
+    
     if not os.path.exists(filepath):
         return []
     try:
@@ -66,10 +67,11 @@ def save_fingerprints(fingerprints, filepath):
     even if an error occurs during writing. This is safer than open() without with,
     which risks leaving the file locked if an exception is raised mid-write.
     """
+    
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(fingerprints, f, indent=4)
 
-def calculate_uniqueness(fp_hash, all_fingerprints):
+def calculate_uniqueness(fp_hash, all_fingerprints):  
     """This def is used to calculate uniqueness.
     It compares a fingerprint hash against all stored records and returns a uniqueness score.
     Uses a set for O(1) deduplication of hashes rather than a list.
