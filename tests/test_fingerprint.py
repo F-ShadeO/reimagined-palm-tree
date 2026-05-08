@@ -13,7 +13,7 @@ def make_payload(**overrides):
 # =============================================================================
 # UNIT TESTS
 # Test each function in isolation — no Flask server running.
-# Follows the Arrange-Act-Assert pattern (Osherove, 2013).
+# Follows the Arrange-Act-Assert pattern (jpreese, n.d.).
 # =============================================================================
 
 class TestParseFingerprint:
@@ -139,7 +139,7 @@ class TestCalculateUniqueness:
 # INTEGRATION TESTS
 # Test the Flask routes directly using Flask's built-in test client.
 # Verifies that the route handlers, validation, and response codes work
-# correctly together — not just individual functions in isolation.
+# well  together just.
 # =============================================================================
 
 @pytest.fixture
@@ -223,7 +223,7 @@ class TestFingerprintRoute:
 # FUNCTIONAL TESTS
 # Test the application from the perspective of the end user journey.
 # Verifies that the complete workflow produces the expected outcomes,
-# treating the application as a black box (Myers et al., 2011).
+# treating the application as a black box (Kimla and Czerwinski, 2022).
 # =============================================================================
 
 class TestUserJourney:
@@ -240,15 +240,22 @@ class TestUserJourney:
         assert data["uniqueness"]["uniqueness_pct"] == 100.0
 
     def test_same_browser_twice_reduces_uniqueness(self, client):
-        """
-        Submitting the same fingerprint twice should reduce uniqueness
-        below 100% on the second submission.
-        """
-        payload = json.dumps(make_payload())
-        client.post("/fingerprint", data=payload, content_type="application/json")
-        response = client.post("/fingerprint", data=payload, content_type="application/json")
-        data = json.loads(response.data)
-        assert data["uniqueness"]["uniqueness_pct"] < 100.0
+    """
+    If two different browsers submit, then the first submits again,
+    its uniqueness should drop below 100% as it now shares the pool
+    with a different fingerprint.
+    """
+    client.post("/fingerprint",
+        data=json.dumps(make_payload(user_agent="BrowserA")),
+        content_type="application/json")
+    client.post("/fingerprint",
+        data=json.dumps(make_payload(user_agent="BrowserB")),
+        content_type="application/json")
+    response = client.post("/fingerprint",
+        data=json.dumps(make_payload(user_agent="BrowserA")),
+        content_type="application/json")
+    data = json.loads(response.data)
+    assert data["uniqueness"]["uniqueness_pct"] < 100.0
 
     def test_no_pii_in_stored_hash(self, client):
         """
