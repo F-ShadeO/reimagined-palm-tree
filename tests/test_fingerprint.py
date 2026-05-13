@@ -13,7 +13,7 @@ def make_payload(**overrides):
 # =============================================================================
 # UNIT TESTS
 # Test each function in isolation — no Flask server running.
-# Follows the Arrange-Act-Assert pattern (jpreese, n.d.).
+# Follows the Arrange-Act-Assert pattern.
 # =============================================================================
 
 class TestParseFingerprint:
@@ -223,7 +223,7 @@ class TestFingerprintRoute:
 # FUNCTIONAL TESTS
 # Test the application from the perspective of the end user journey.
 # Verifies that the complete workflow produces the expected outcomes,
-# treating the application as a black box (Kimla and Czerwinski, 2022).
+# treating the application as a black box.
 # =============================================================================
 
 class TestUserJourney:
